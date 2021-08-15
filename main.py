@@ -26,27 +26,30 @@ print("[===========================]")
 for p in psi.process.ProcessTable().values(): #Check process list
 	if "strandtest.py" in p.command: # Name of ur 1 process
 		strandtest = True
+		strandtest_pid = str(p.pid) #Get PID
 	if "besed.py" in p.command: # Name of ur 2 process
 		besed = True
+		besed_pid = str(p.pid)#Get PID
 	if "SCREEN -d -m -S Twitch_Mining" in p.command: # Name of ur 3 process
 		twitchmine = True
+		twitchmine_pid = str(p.pid)#Get PID
 	if "SCREEN -d -m -S onlinecheck" in p.command: # Name of ur 4 process
 		onlinecheck = True
-
+		onlinecheck_pid = str(p.pid)#Get PID
 if strandtest:
-	print("LED - Контроллер ------ "+Fore.GREEN+"OK") #if process active
+	print("LED - Контроллер ------ "+Fore.GREEN+"OK"+" ["+strandtest_pid+"]") #if process active print OK and PID
 else:
-	print("LED - Контроллер ------ "+Fore.RED+"OШИБКА")# if process not active
+	print("LED - Контроллер ------ "+Fore.RED+"OШИБКА"+" [---]")# if process not active
 if besed:
-	print("Бот беседы ------------ "+Fore.GREEN+"OK")#if process active
+	print("Бот беседы ------------ "+Fore.GREEN+"OK"+" ["+besed_pid+"]")#if process active print OK and PID
 else:
-	print("Бот беседы ------------ "+Fore.RED+"OШИБКА")# if process not active
+	print("Бот беседы ------------ "+Fore.RED+"OШИБКА"+" [---]")# if process not active
 if twitchmine:
-	print("Майнер твича ---------- "+Fore.GREEN+"OK")#if process active
+	print("Майнер твича ---------- "+Fore.GREEN+"OK"+" ["+twitchmine_pid+"]")#if process active print OK and PID
 else:
-	print("Майнер твича ---------- "+Fore.RED+"OШИБКА")# if process not active
+	print("Майнер твича ---------- "+Fore.RED+"OШИБКА"+" [---]")# if process not active
 if onlinecheck:
-	print("Чекер онлайна --------- "+Fore.GREEN+"OK")#if process active
+	print("Чекер онлайна --------- "+Fore.GREEN+"OK"+" ["+onlinecheck_pid+"]")#if process active print OK and PID
 else:
-	print("Чекер онлайна --------- "+Fore.RED+"OШИБКА")# if process not active
+	print("Чекер онлайна --------- "+Fore.RED+"OШИБКА"+" [---]")# if process not active
 print("[===========================]")
