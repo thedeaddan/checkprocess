@@ -12,7 +12,7 @@ low_temp = 45 # Operating temperature threshold
 average_temp = 55 # Threshold of elevated temperature
 high_temp = 60 # Very high temperature threshold
 
-temp = str(subprocess.check_output('vcgencmd measure_temp', shell=True)).split('"')[1].split("=")[1][:-4]
+temp = str(subprocess.check_output('vcgencmd measure_temp', shell=True)).split('"')[1].split("=")[1][:-4] # The vcgencmd measure_temp command requests the temperature, change it to your own. Perhaps this line will need to be changed.
 float_temp = int(float(temp))
 print("[===========================]")
 if float_temp < low_temp: 
