@@ -1,6 +1,5 @@
 import psi.process 
 from colorama import init, Fore
-import psutil
 import subprocess
 init(autoreset=True) #init colorama 
 
@@ -15,7 +14,6 @@ high_temp = 60 # Very high temperature threshold
 
 temp = str(subprocess.check_output('vcgencmd measure_temp', shell=True)).split('"')[1].split("=")[1][:-4]
 float_temp = int(float(temp))
-#print(float_temp)
 print("[===========================]")
 if float_temp < low_temp: 
 	print("Температура = "+Fore.GREEN+temp+"°C")
