@@ -1,6 +1,7 @@
 import psi.process 
 from colorama import init, Fore
 import psutil
+import subprocess
 init(autoreset=True) #init colorama 
 
 strandtest = False #Setting the variable to a false value
@@ -12,8 +13,9 @@ low_temp = 45 # Operating temperature threshold
 average_temp = 55 # Threshold of elevated temperature
 high_temp = 60 # Very high temperature threshold
 
-temp = str(psutil.sensors_temperatures().get("cpu_thermal")[0]).split(",")[1].replace(" current=","")[:-2] # Get current temp in str
-float_temp = float(str(psutil.sensors_temperatures().get("cpu_thermal")[0]).split(",")[1].replace(" current=","")[:-2]) # We get the current temperature for comparison
+temp = str(subprocess.check_output('vcgencmd measure_temp', shell=True)).split('"')[1].split("=")[1][:-4]
+float_temp = int(float(temp))
+#print(float_temp)
 print("[===========================]")
 if float_temp < low_temp: 
 	print("Температура = "+Fore.GREEN+temp+"°C")
