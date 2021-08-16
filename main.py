@@ -8,6 +8,7 @@ besed = False # Setting the variable to a false value
 twitchmine = False #Setting the variable to a false value
 onlinecheck = False # Setting the variable to a false value
 
+cold_temp = 38
 low_temp = 45 # Operating temperature threshold
 average_temp = 55 # Threshold of elevated temperature
 high_temp = 60 # Very high temperature threshold
@@ -15,7 +16,9 @@ high_temp = 60 # Very high temperature threshold
 temp = str(subprocess.check_output('vcgencmd measure_temp', shell=True)).split('"')[1].split("=")[1][:-4] # The vcgencmd measure_temp command requests the temperature, change it to your own. Perhaps this line will need to be changed.
 float_temp = int(float(temp))
 print("[===========================]")
-if float_temp < low_temp: 
+if float_temp < cold_temp:
+	print("Температура = "+Fore.CYAN+temp+"°C")
+elif float_temp < low_temp: 
 	print("Температура = "+Fore.GREEN+temp+"°C")
 elif float_temp < average_temp:
 	print("Температура = "+Fore.YELLOW+temp+"°C")
