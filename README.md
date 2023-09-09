@@ -51,7 +51,6 @@ processes = {"TM_thedeaddan", "TM_Mini", "TM_Grisha", "VK_Delete", "TG_Bot_Curs"
 
 Приятного использования! Если у вас есть какие-либо вопросы или предложения по улучшению проекта, не стесняйтесь обращаться.
 
-```
 ![image](https://github.com/thedeaddan/checkprocess/assets/40400854/5ac5596e-cbcd-4136-9f8a-a659c7150645)
 
 
