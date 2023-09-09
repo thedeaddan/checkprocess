@@ -16,9 +16,7 @@
 Вы можете установить библиотеки с помощью pip:
 
 ```
-
 pip install psi-process colorama rich
-
 ```
 
 ## Использование
